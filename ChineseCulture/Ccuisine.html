@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel= "shortcut icon" type="image/x-icon" href="../Assets/LoginAssets/malaysia.png">
+    <title>Chinese Cuisine</title>
+
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--CSS style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="chinese.css">
+
+    <!-- CSS style -->
+    <style>
+        body{
+            background-image: url('../Assets/ChineseAssets/theanhougong.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Lato', sans-serif; 
+            font-size: 15px;
+            color: black;
+            margin:0;
+        }
+
+        .h2{
+            color:white;
+            margin-top: 60px;
+            font-size: 50px;
+        }
+        .cuisine-img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .card {
+            position: relative;
+            border: black solid 2px;
+            overflow: hidden;
+        }
+        .portfolio-box-caption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            color: #fff;
+            background: rgba(244, 98, 58, 0.9);
+            transition: opacity 0.25s ease;
+            text-align: center;
+            font-size: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .portfolio-box-caption:hover {
+            opacity: 1;
+        }
+
+        .project-category{
+            color:black;
+            font-size:28px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body class="overflow-scroll" onload="updateNavLink()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../MainPage/FrontPage.html">Explorea</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../ChineseCulture/Cmainpage.html">Chinese</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../MalayCulture/Mmainpage.html">Malay</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../IndiaCulture/Imainpage.html">Indian</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../AboutUs/aboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="loginLogoutLink" href="../Login/Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </nav>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const loginLogoutLink = document.getElementById('loginLogoutLink');
+  
+        // Function to check session storage and update link text
+        function updateNavLink() {
+          const sessionValue = parseInt(sessionStorage.getItem('login'));
+          if (sessionValue == '1') {
+            loginLogoutLink.textContent = 'Logout';
+            loginLogoutLink.href = '#'; // Change href if needed
+          } else {
+            loginLogoutLink.textContent = 'Login';
+            loginLogoutLink.href = '../Login/Login.html'; // Change href if needed
+          }
+        }
+        updateNavLink();
+      });
+      loginLogoutLink.addEventListener('click', (event) => {
+        if (loginLogoutLink.textContent === 'Logout') {
+          event.preventDefault();
+          handleLogout();
+        }
+      });
+  
+      function handleLogout() {
+      sessionStorage.setItem('login',null)
+      window.alert("Log out succussful!");
+      loginLogoutLink.textContent = 'Login';
+      loginLogoutLink.href = '../Login/Login.html';
+    }
+    </script>
+
+    <div class="h2">Malaysian Chinese Cuisines</div>
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/beansproutschicken.jpg" class="card-img-top cuisine-img" alt="BeanSproutsChicken" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Bean Sprouts Chicken</div>
+                            <div class="project-name">Bean Sprouts Chicken also known as 芽菜雞 in Chinese is Ipoh's most well known dish, Bean Sprouts Chicken consists of poached or steamed chicken accompanied with a plate of blanched locally grown bean sprouts in a simple dressing of soy sauce and sesame oil. The crunchy and stout texture of Ipoh-grown bean sprouts is attributed to the mineral-rich properties of local water supplies. The dish is usually served with hor fun noodles in a chicken broth, or plain rice.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/cheecheongfun.jpg" class="card-img-top cuisine-img" alt="CheeCheongFun" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Chee Cheong Fun</div>
+                            <div class="project-name">Chee cheong fun also known as 豬腸粉 in Chinese is square rice sheets made from a viscous mixture of rice flour and water. This liquid is poured onto a specially made flat pan in which it is steamed to produce the square rice sheets. The steamed rice sheets is rolled or folded for ease in serving. It is usually served with tofu stuffed with fish paste. The dish is eaten with accompaniment of semi sweet fermented bean paste sauce, chilli paste or light vegetable curry gravy. Ipoh and Penang have different versions of the dish as well; certain stalls in Ipoh serve the dish with a red sweet sauce, thinly sliced pickled green chillies and fried shallots, while in Penang, a type of sweet, black shrimp sauce called hae ko is the main condiment.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/wontonmee.jpg" class="card-img-top cuisine-img" alt="WontonMee" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black"><b>Wonton Mee</b></div>
+                            <div class="project-name">Wonton Mee known as 雲吞麵 in Chinese consists of thin egg noodles with wonton dumplings, 雲吞 in Chinese, choy sum and char siu. The dumplings are usually made of pork or prawns and typically boiled or deep fried. The noodles may be served in a bowl of broth with dumplings as in the traditional Cantonese manner, but in Malaysia it is more commonly dressed with a dark soy sauce dressing, with boiled or deep-fried wonton dumplings as a topping or served on the side in a bowl of broth. Variations of this dish are usually in the meat accompaniments with the noodles. These may include roast pork (烧肉), braised chicken feet, and roast duck (燒鴨).</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/dimsum.png" class="card-img-top cuisine-img" alt="DimSum" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Dim Sum</div>
+                            <div class="project-name">Many dim sum dishes are made of seafood, chopped meats, or vegetables wrapped in dough or thin wrappings and steamed, deep-fried, or pan-fried. A traditional dim sum brunch includes various types of steamed buns, such as cha siu bao, rice or wheat dumplings, and rice noodle rolls that contain a range of ingredients, including beef, chicken, pork, prawns, and vegetarian options. Many dim sum restaurants also offer plates of steamed green vegetables, stuffed eggplant, stuffed green peppers, roasted meats, congee and other soups. Dessert dim sum is also available and can be ordered at any time since there is not a set sequence for the meal.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/dumplings.jpg" class="card-img-top cuisine-img" alt="Dumplings" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption"> 
+                            <div class="project-category text-black">Dumplings</div>
+                            <div class="project-name">Dumplings are a broad category of dishes found in various cuisines worldwide, but they are particularly prominent in Chinese cuisine. Generally, dumplings consist of small pieces of dough, often filled with meat, vegetables, or both, which are then either boiled, steamed, fried, or baked. In Chinese cuisine, dumplings are known as "jiaozi" (饺子) or "baozi" (包子), depending on their shape and preparation method.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/steamboat.jpg" class="card-img-top cuisine-img" alt="Steamboat" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">               
+                            <div class="project-category text-black">Steamboat</div>
+                            <div class="project-name">Chinese steamboat, also known as Chinese hot pot or simply "hot pot" (火锅, huǒguō), is a popular cooking method and communal dining experience in Chinese cuisine. It involves a simmering pot of broth placed in the center of the dining table, where diners cook a variety of raw ingredients, such as thinly sliced meat, seafood, vegetables, tofu, and noodles.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/BakKutTeh.jpg" class="card-img-top cuisine-img" alt="BakKutTeh" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">               
+                            <div class="project-category text-black">Bak Kut Teh</div>
+                            <div class="project-name">Bak kut teh is a pork rib dish cooked in broth popularly served in Malaysia among Chinese where there is a predominant Hoklo and Teochew community. The name literally translates from the Hokkien dialect as "meat bone tea", and it usually consists of pork ribs simmered in a broth of herbs and spices for hours.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/charkueyteow.jpg" class="card-img-top cuisine-img" alt="Steamboat" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">               
+                            <div class="project-category text-black">Char Kway Teow</div>
+                            <div class="project-name">Char kway teow sometimes also spelled as char kuey teow, also known as 炒粿條 in Chinese, is a stir-fried rice noodle dish from Maritime Southeast Asia of southern Chinese origin. In Hokkien and Teochew, char means 'stir-fried' and kway teow refers to flat rice noodles. It is made from flat rice noodles known as 河粉 in Chinese or kway teow 粿條 in Chinese of approximately 1 cm or about 0.5 cm in width, stir-fried over very high heat with garlic, light and dark soy sauce, chili paste, whole prawns, shelled blood cockles, chopped Chinese chives, slices of Chinese sausage, and bean sprouts. Other common ingredients include fishcake and belachan.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="h2">Desserts and Sweets</div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/lengcheekang.jpg" class="card-img-top cuisine-img" alt="LengCheeKang" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">               
+                            <div class="project-category text-black">Leng Chee Kang</div>
+                            <div class="project-name">Leng chee kang, 莲子羹 in Chinese, is a mixture of cooked ingredients immersed in a sweet soup. Ingredients vary greatly depending on the cook, but lotus seed is always the primary ingredient, and the soup may include dried longan, white fungus, barley, malva nut and rock sugar as secondary ingredients. Leng chee kang may be served warm or cold. It has also been introduced into Malay cuisine albeit misinterpreted as "laici kang" hence incorporating tinned lychees</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/mooncake.jpg" class="card-img-top cuisine-img" alt="Mooncake" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Mooncake</div>
+                            <div class="project-name">Mooncake, 月饼 in Chinese, is a round or rectangular pastries with a rich thick filling, traditionally eaten during the Mid-Autumn Festival and accompanied with Chinese tea. Both the traditional baked mooncake and the snow skin version are popular and widely available in Malaysia during the festival season.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/muarchee.jpg" class="card-img-top cuisine-img" alt="MuarChee" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Muah Chee</div>
+                            <div class="project-name">Muar chee, 麻糍 in Chinese, is a glutinous rice ball lumps coated in a sweetened mixture of pulverised peanuts and sesame seeds, and served with toothpicks.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/tangyuan.jpeg" class="card-img-top cuisine-img" alt="TangYuan" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-black">Tang Yuan</div>
+                            <div class="project-name">Tangyuan, 汤圆 in Chinese, is a plain white or coloured sweet dumplings made from glutinous rice flour. Traditionally homemade and eaten during Yuanxiao (Chinese: 元宵) as well as the Dongzhi Festival (Chinese: 冬至), tangyuan is now available year around sold as dessert. Tangyuan dumplings with filling are usually served in a lightly sweetened clear syrup, while unfilled ones are served as part of a sweet dessert soup.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            
+
+    <a href="../ChineseCulture/Cmainpage.html" class="btn btn-primary return-button">Back</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

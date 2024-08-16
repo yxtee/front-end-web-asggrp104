@@ -1,0 +1,159 @@
+body {
+    background-image: url('../Assets/MalayAssets/afeeq-nadzrin-U2HBOw4uaYk-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif; 
+    font-size: 15px;
+    color: black;
+    margin:0;
+    }
+    
+    .content{
+    position :relative;
+    top:5%;
+    border-radius: 20px;
+    padding:10px;
+    overflow-y: auto;
+    background-color: rgba(255,255,255,0.7);
+    width: 75%;
+    max-width: none;
+    margin:auto;
+    }
+    
+    .h2{
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+    }
+    
+    .return-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-weight: bold;
+    color:black;
+    border-color: black;
+    background-color: #f8f9fa; 
+    }
+    
+#mbody{
+    background-image: url(../Assets/MalayAssets/charlie-harutaka-Gacd_XeSGQk-unsplash.jpg);
+}
+
+    header {
+        background-color: #ff9800;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    h1 {
+        margin: 0;
+        font-size: 36px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    
+    section {
+        padding: 20px;
+    
+    }
+    
+    #introduction {
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+    
+    }
+    
+    #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .dish {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+    }
+    
+    .dish img {
+        width: 100%;
+        height: 50%;
+        border-radius: 8px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    
+    .return-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-weight: bold;
+        color: black;
+        border-color: black;
+        background-color: #f8f9fa;
+    }
+    
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        margin-bottom: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 28px;
+        }
+    
+        p {
+            font-size: 16px;
+        }
+    
+        #gallery {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .dish {
+            width: 90%;
+        }
+    
+        h2 {
+            font-size: 20px;
+        }
+    
+        h3 {
+            font-size: 18px;
+        }
+    }

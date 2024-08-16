@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" \>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malay Cuisine</title>
+    <link rel="stylesheet" type="text/css" href="malay.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/LoginAssets/malaysia.png">
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--CSS style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body class="overflow-scroll" onload="updateNavLink()" id="mbody">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../MainPage/FrontPage.html">Explorea</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../ChineseCulture/Cmainpage.html">Chinese</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../MalayCulture/Mmainpage.html">Malay</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../IndiaCulture/Imainpage.html">Indian</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../AboutUs/aboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="loginLogoutLink" href="../Login/Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </nav>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const loginLogoutLink = document.getElementById('loginLogoutLink');
+  
+        // Function to check session storage and update link text
+        function updateNavLink() {
+          const sessionValue = parseInt(sessionStorage.getItem('login'));
+          if (sessionValue == '1') {
+            loginLogoutLink.textContent = 'Logout';
+            loginLogoutLink.href = '#'; // Change href if needed
+          } else {
+            loginLogoutLink.textContent = 'Login';
+            loginLogoutLink.href = '../Login/Login.html'; // Change href if needed
+          }
+        }
+        updateNavLink();
+      });
+      loginLogoutLink.addEventListener('click', (event) => {
+        if (loginLogoutLink.textContent === 'Logout') {
+          event.preventDefault();
+          handleLogout();
+        }
+      });
+  
+      function handleLogout() {
+      sessionStorage.setItem('login',null)
+      window.alert("Log out succussful!");
+      loginLogoutLink.textContent = 'Login';
+      loginLogoutLink.href = '../Login/Login.html';
+    }
+    </script>
+
+    <header>
+        <h1>Welcome to Malaysian Malay Cuisine</h1>
+        <p>Take a Deep Dive into the flavorful Cuisines of the Malaysian Malays</p>
+    </header>
+
+    <section id="introduction">
+        <h2><b>Introduction</b></h2>
+        <p>Traditional Malay cuisine is distinguished by its generous use of spices and coconut milk, which impart a
+            rich, creamy flavor to dishes. Belacan (prawn paste) is another key ingredient, forming the base of sambal—a
+            flavorful condiment made with belacan, chili peppers, onions, and garlic. Lemongrass and galangal are also
+            commonly used in Malay cooking.</p>
+    </section>
+    <h2 style="display: flex; flex-wrap: wrap; justify-content: space-around;color:antiquewhite">Popular Dishes</h2>
+    <section id="gallery">
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/Asampedas.jpg" alt="Butter Chicken">
+                <h3>Asam Pedas</h3>
+                <p>a sour stew of fish (usually mackerel), tamarind, chilli, tomatoes, okra and Vietnamese coriander.
+                </p>
+            </div>
+        </div>
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/AyamMasakMerah.jpg" alt="Biryani">
+                <h3>Ayam masak merah</h3>
+                <p> a casserole of chicken pieces in dried chilli sambal.[28] It tends to be a home-cooked dish, so many
+                    variations on the recipe exist.
+                </p>
+            </div>
+        </div>
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/Cincalok.jpg" alt="Samosa">
+                <h3>Cincalok</h3>
+                <p>fermented small shrimp or krill. It is usually served as a condiment together with chillies, shallots
+                    and lime juice.</p>
+            </div>
+        </div>
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/Satay.jpg" alt="Dosa">
+                <h3>Satay</h3>
+                <p>a dish originally from Java and Sumatra in Indonesia, and distributed widely across the Malay
+                    Archipelago. It is widely popular and common in Indonesian cuisine with rich variations and recipes.
+                    Malay chicken satay closely resembles Madura satay with a rich peanut sauce. In Malaysia, the most
+                    popular variant is kajang satay.</p>
+            </div>
+        </div>
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/Rendang.jpg" alt="Paneer Tikka">
+                <h3>Rendang</h3>
+                <p>a spicy meat stew originating from the Minangkabau ethnic group of Indonesia,[33] and adopted by
+                    Malay throughout the archipelago. Rendang is traditionally prepared by the Malay community during
+                    festive occasions.</p>
+            </div>
+        </div>
+        <div class="fade-in-section">
+            <div class="dish">
+                <img src="../Assets/MalayAssets/Laksa.jpg" alt="Rogan Josh">
+                <h3>Laksa</h3>
+                <p>a spicy noodle soup that consists of thick wheat noodles or rice vermicelli with chicken, prawn or
+                    fish, served in spicy soup based on either rich and spicy curry coconut milk or sour asam (tamarind
+                    or gelugur) of various types.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="../MalayCulture/Mmainpage.html" class="btn btn-primary return-button">Back</a>
+
+</body>
+
+</html>

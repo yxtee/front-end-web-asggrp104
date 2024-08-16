@@ -1,0 +1,137 @@
+body {
+    background-image: url('../Assets/MainpageAssets/KL-Tower-in-Kuala-Lumpur-in-sunset.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    position: relative;
+    top: 5%;
+    border-radius: 20px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    max-width: none;
+    margin: auto;
+    color: black;
+}
+
+.h2 {
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+}
+/* styles.css */
+
+.text-box {
+    background-image: url(../Assets/MainpageAssets/malaysia.png);
+    background-size: cover;
+    background-position: center;
+    height:250px;
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+}
+
+main {
+    padding: 20px;
+}
+
+.fade-section {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100px); /* Slightly moved down */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transition effect */
+    margin-bottom: 20px;
+    font-weight: bold;
+    background: white;
+    padding: 20px;
+    padding-bottom: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.fade-section.visible {
+    opacity: 0.8; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+.image-desc1{
+    background-image: url(../Assets/MainpageAssets/tea-form-cameron-highlands-sunrise-landscape-hills-3840x2160-1357\(resize\).jpg);
+    background-position: center;
+    width:600px;
+    height:300px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin-left: auto;
+    float: right;
+    border-radius: 5px 5px 5px 5px;
+}
+.image-desc2{
+    background-image: url(../Assets/MainpageAssets/A_Famosa_Fortress\(resize\).jpeg);
+    bottom: 20px;
+    width:600px;
+    height:450px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin-left: auto;
+    float: right;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.image-desc3{
+    background-image: url(../Assets/MainpageAssets/SULTAN\ ABDUL\ SAMAD\ BUILDING\(resize\).jpg);
+    width:600px;
+    height: 360px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin-left: auto;
+    float: left;
+    border-radius: 5px 5px 5px 5px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dish {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}

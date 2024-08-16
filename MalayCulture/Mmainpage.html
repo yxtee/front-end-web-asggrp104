@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="../Assets/LoginAssets/malaysia.png">
+  <title>Malay Culture</title>
+
+  <!--Bootstrap-->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--CSS style-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="malay.css">
+</head>
+
+<body class="overflow-scroll" onload="updateNavLink()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../MainPage/FrontPage.html">Explorea</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../ChineseCulture/Cmainpage.html">Chinese</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../MalayCulture/Mmainpage.html">Malay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../IndiaCulture/Imainpage.html">Indian</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../AboutUs/aboutUs.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="loginLogoutLink" href="../Login/Login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginLogoutLink = document.getElementById('loginLogoutLink');
+
+      // Function to check session storage and update link text
+      function updateNavLink() {
+        const sessionValue = parseInt(sessionStorage.getItem('login'));
+        if (sessionValue == '1') {
+          loginLogoutLink.textContent = 'Logout';
+          loginLogoutLink.href = '#'; // Change href if needed
+        } else {
+          loginLogoutLink.textContent = 'Login';
+          loginLogoutLink.href = '../Login/Login.html'; // Change href if needed
+        }
+      }
+      updateNavLink();
+    });
+    loginLogoutLink.addEventListener('click', (event) => {
+      if (loginLogoutLink.textContent === 'Logout') {
+        event.preventDefault();
+        handleLogout();
+      }
+    });
+
+    function handleLogout() {
+      sessionStorage.setItem('login',null)
+      window.alert("Log out succussful!");
+      loginLogoutLink.textContent = 'Login';
+      loginLogoutLink.href = '../Login/Login.html';
+    }
+  </script>
+
+  <div class="content">
+    <h2 style="font-weight: bold;text-align: center;">
+      <strong>Let's Learn About the History of the Malays in Malaysia.</strong>
+    </h2>
+    <br>
+    <div>
+      <p>
+        <strong>Malaysian Malays (Malay: Orang Melayu Malaysia, Jawi: ملايو مليسيا)</strong> are Malaysians of Malay
+        ethnicity
+        whose ancestry originates wholly or partly in the Malay world. According to the 2023 population estimate, with
+        a total population of 17.6 million, Malaysian Malays form 57.9% of Malaysia's demographics, the largest ethnic
+        group in the country. They can be broadly classified into two main categories; Anak Jati (indigenous Malays or
+        local Malays) and Anak Dagang (trading Malays or foreign Malays).
+      </p>
+      <p>
+        The Anak Jati or native Malays consist of those individuals who adhere to the Malay culture native to the
+        coastal areas of Malay Peninsula and Borneo.[3] Among notable groups include the Bruneians, Kedahans,
+        Kelantanese, Pahangite, Perakians, Sarawakians and Terengganuans. On the other hand, the Anak Dagang or foreign
+        Malays, consist of descendants of immigrants from other parts of Malay Archipelago who became the citizens of
+        the Malay sultanates and were absorbed and assimilated into Malay culture at different times, aided by
+        similarity in lifestyle and common religion.
+      </p>
+      <p>
+        The foreign Malays have Acehnese, Banjarese, Buginese, Javanese, Mandailing and Minangkabau ancestries that come
+        from Indonesia.[4][5] Some foreign Malays may also come from other parts of Southeast Asia, that includes the
+        Chams of Indochina, Cocos Malays of Australian Cocos (Keeling) Islands as well as the Patani Malays of southern
+        Thailand. There is also a minority of Malays who are partially descended from more recent immigrants from many
+        other countries who have assimilated into Malay Muslim culture.
+      </p>
+      <h5><strong>More History and Facts About Malaysians Malays Below, Click to View More !</strong></h5>
+    </div>
+    <details>
+      <summary class="h6"><b>Religions</b></summary>
+      <ul>
+        <li>
+          Islam plays a pivotal role in the lives of Malaysian Malays. The majority of Malays are Sunni Muslims, and
+          Islam is not only a religion but also a significant element of their cultural identity. The arrival of Islam
+          in the 15th century profoundly transformed Malay society. The Sultanate of Malacca was instrumental in
+          spreading Islam across the Malay Peninsula, which became a dominant force shaping the social and cultural
+          landscape of the Malays.
+        </li>
+        <li>
+          Islamic practices and principles influence various aspects of daily life for Malaysian Malays. Religious
+          observances such as daily prayers, fasting during Ramadan, and the performance of Hajj are integral to their
+          spiritual lives. Islamic law (Sharia) is also incorporated into the legal system in Malaysia, particularly in
+          matters of personal status such as marriage, inheritance, and family law.
+        </li>
+        <li>
+          In addition to religious practices, Islamic education plays a crucial role. Many Malays attend religious
+          schools (Sekolah Agama) alongside secular schools, where they learn about Islamic teachings, Quranic studies,
+          and Arabic language. This dual approach to education helps preserve and promote Islamic values within the
+          community while also equipping individuals with the skills needed for broader societal participation.
+        </li>
+      </ul>
+    </details>
+    <details>
+      <summary class="h6"><b>Education</b></summary>
+      <ul>
+        <li>
+          Education is highly valued among Malaysian Malays, with a strong emphasis on both academic achievement and
+          Islamic learning. The Malaysian education system comprises public and private institutions that offer a range
+          of educational opportunities from primary to tertiary levels.
+        </li>
+        <li>
+          Malaysian Malays typically attend public schools where the curriculum is based on the national education
+          system. These schools offer instruction in various subjects, including mathematics, science, languages, and
+          social studies, following a syllabus set by the Ministry of Education. Many Malays also attend religious
+          schools to receive Islamic education, where they study Islamic history, jurisprudence, and the Quran.
+        </li>
+        <li>
+          For higher education, Malaysian Malays have access to universities and colleges across Malaysia and abroad.
+          Public universities, such as Universiti Malaya and Universiti Putra Malaysia, offer a wide range of
+          undergraduate and postgraduate programs. Additionally, there are institutions specializing in Islamic studies,
+          such as the International Islamic University Malaysia (IIUM), which cater to those seeking advanced religious
+          education.
+        </li>
+        <li>
+          The Malaysian government implements various policies to ensure educational access and equity among different
+          ethnic groups. Programs like the Bumiputera policy provide opportunities and support for Malays and other
+          indigenous groups to advance in education and employment. This policy aims to address socio-economic
+          disparities and promote balanced development within the country.
+        </li>
+      </ul>
+    </details>
+    <hr>
+    <div class="card bg-dark text-black">
+      <div class="card h-100">
+        <img src="../Assets/MalayAssets/download.jpeg" class="card-img-top" alt="MalayCuisine">
+        <div class="card-body">
+          <h3 class="card-title">Malaysian Malay Cuisines</h3>
+          <p class="card-text">Click "Learn More" to Find Out More About Malay Cuisines!</p>
+          <a href="mcuisine.html" class="btn btn-primary btn-learnmore">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <div class="col-md-12">
+        <h3><b>Explore More:</b></h3>
+        <h6>
+          <p>Intereste in Other Cultural Groups In Malaysia? Check Out the Lisks Below! </p>
+        </h6>
+        <ul class="list-group">
+          <h5>
+            <li class="list-group-item-50"><a href="../ChineseCulture/Cmainpage.html"><strong>Chinese
+                  Culture</strong></a></li>
+          </h5>
+          <h5>
+            <li class="list-group-item-50"><a href="../IndiaCulture/Imainpage.html"><strong>Indian
+                  Culture</strong></a></li>
+          </h5>
+        </ul>
+      </div>
+    </div>
+
+</body>
+
+</html>
